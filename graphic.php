@@ -55,7 +55,6 @@ class Instagraph
         # remove newlines and convert single quotes to double to prevent errors
         $command = str_replace(array("\n", "'"), array('', '"'), $command);
         $command = escapeshellcmd($command);
-        print_r($command);
         # execute convert program
         exec($command);
     }
@@ -100,8 +99,7 @@ class Instagraph
         {$input}");
     }
 
-	public function kelvin()
-	{
+	public function kelvin() {
 	    $this->tempfile();
 	 
 	    $this->execute("convert
@@ -111,5 +109,39 @@ class Instagraph
 	    $this->_tmp");
 	    $this->frame($this->_tmp, __FUNCTION__);
 	    $this->output();
+	}
+
+	public function nashville()  
+	{  
+	    $this->tempfile();  
+	   
+	    $this->colortone($this->_tmp, '#222b6d', 100, 0);  
+	    $this->colortone($this->_tmp, '#f7daae', 100, 1);  
+	   
+	    $this->execute("convert $this->_tmp -contrast -modulate 100,150,100 -auto-gamma $this->_tmp");  
+	    $this->frame($this->_tmp, __FUNCTION__);  
+	   
+	    $this->output();  
+	}  
+}
+
+class Graphic {
+
+	public function __construct($image_path, $to_path) {
+		$this->to_path = $to_path;
+		$this->img = new Imagick($image_path);
+	}
+
+	public function render_a() {
+		$this->img->modulateImage(120, 120, 100);
+		$this->img->gammaImage(1.6);
+		$this->img->contrastImage(50);
+		#$this->img->despeckleImage();
+		$this->img->writeImage($this->to_path);
+		$this->img->clear();
+	}
+
+	public function __destruct() {
+		$this->img->destroy();
 	}
 }

@@ -2,9 +2,9 @@
 define("ROOT", dirname(dirname(__FILE__)));
 require_once ROOT."/graphic.php";
 
-$image_path = ROOT."/test/test.png";
-$to = ROOT."/test/test_o.png";
+$image_path = ROOT."/test/before.jpg";
+$to = ROOT."/test/after_test.jpg";
 
-$grapher = Instagraph::factory($image_path, $to);
+$grapher = new Graphic($image_path, $to);
 
-$grapher->kelvin();
+$grapher->render_a();
