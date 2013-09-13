@@ -7,4 +7,4 @@ $to = ROOT."/test/after_test.jpg";
 
 $grapher = new Graphic($image_path, $to);
 
-$grapher->render_a();
+$grapher->apply_filter();

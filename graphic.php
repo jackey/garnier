@@ -132,7 +132,7 @@ class Graphic {
 		$this->img = new Imagick($image_path);
 	}
 
-	public function render_a() {
+	public function apply_filter() {
 		$this->img->modulateImage(120, 120, 100);
 		$this->img->gammaImage(1.6);
 		$this->img->contrastImage(50);
@@ -140,6 +140,23 @@ class Graphic {
 		$this->img->writeImage($this->to_path);
 		$this->img->clear();
 	}
+
+    public function recreate_to_diamond($path, $width, $height, $digree = 0) {
+        $rad = deg2rad($digree);
+        // 1. Create transparant image with size ($width, $height)
+        $this->img->newImage($width, $height, 'none');
+        $this->img->setImageFormat("png");
+        $drawer = new ImagickDraw();
+        $p1 = array('x' => 0, 'y' => 0);
+        $p2 = array('x' => $width - tan($rad)* $height, 'y' => 0);
+        $p3 = array('x' => $width, 'y' => $height);
+        $p4 = array('x' => tan($rad)* $height, 'y' => $height);
+        $drawer->polygon(array($p1, $p2, $p3, $p4));
+        $drawer->setStrokeColor(new ImagickPixel("none"));
+        $this->img->drawImage($drawer);
+        $this->img->writeImage($path);
+        $this->img->clear();
+    }
 
 	public function __destruct() {
 		$this->img->destroy();
