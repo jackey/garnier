@@ -2,8 +2,9 @@
 define("ROOT", dirname(dirname(__FILE__)));
 require_once ROOT."/graphic.php";
 
-$to = ROOT."/test/testcreate.png";
+$image_need_to_process = ROOT."/test/before.jpg";
 
-$grapher = new Graphic($to, $to);
+$grapher = new Graphic();
+$processed_image = $grapher->apply_filter($image_need_to_process);
 
-$grapher->recreate_to_diamond($to, 200, 200, 5);
+$grapher->mergeImages(array($image_need_to_process, $processed_image));

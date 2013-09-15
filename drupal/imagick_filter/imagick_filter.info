@@ -1,0 +1,4 @@
+name = Imagick Filter Module
+description = Provide new image file field for file image field.
+version = 0.1.beta
+core = 7.x
