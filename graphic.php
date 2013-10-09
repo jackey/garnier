@@ -6,13 +6,14 @@ class Graphic {
         $this->background = dirname(__FILE__)."/background.png";
 	}
 
-	public function apply_filter($image_path, $to_path) {
+	public function apply_filter($image_path, $to_path = NULL) {
         $info = pathinfo($image_path);
-        $to_path = $info['dirname']."/".time()."_". $info["filename"].".png";
+        if ($to_path == NULL)
+            $to_path = $info['dirname']."/".time()."_". $info["filename"].".png";
         $img = new Imagick($image_path);
 		$img->modulateImage(120, 120, 100);
-		$img->gammaImage(1.6);
-		$img->contrastImage(50);
+	    $img->gammaImage(1.4);
+		$img->contrastImage(70);
 		#$this->img->despeckleImage();
 		$img->writeImage($to_path);
 		$img->clear();
@@ -136,6 +137,6 @@ class Graphic {
     }
 
 	public function __destruct() {
-		$this->img->destroy();
+		//$this->img->destroy();
 	}
 }
