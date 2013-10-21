@@ -1,0 +1,238 @@
+2013/10/21 23:01:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/
+---
+2013/10/21 23:01:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/
+---
+2013/10/21 23:01:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://garnier.local/index.php?r=site/page&view=about
+---
+2013/10/21 23:02:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:02:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:02:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:02:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:02:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:02:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:03:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:03:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('page')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:03:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:03:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:03:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:03:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://garnier.local/
+---
+2013/10/21 23:03:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://garnier.local/index.php?r=site/page&view=about
+---
+2013/10/21 23:03:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('login')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://garnier.local/index.php?r=site/contact
+---
+2013/10/21 23:03:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://garnier.local/index.php?r=site/login
+---
+2013/10/21 23:11:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('login')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://garnier.local/index.php?r=user
+---
+2013/10/21 23:11:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('login')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://garnier.local/index.php
+---
+2013/10/21 23:12:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('user')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('user')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/user')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/user
+---
+2013/10/21 23:12:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('user')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('user')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/user')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/user
+---
