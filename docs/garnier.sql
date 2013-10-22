@@ -35,6 +35,7 @@ CREATE  TABLE IF NOT EXISTS `garnier`.`user` (
   `email` VARCHAR(45) NULL ,
   `tel` VARCHAR(45) NULL ,
   `datetime` DATETIME NULL ,
+  `avadar` INT DEFAULT 0,
   PRIMARY KEY (`user_id`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
