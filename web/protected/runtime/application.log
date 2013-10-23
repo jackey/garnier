@@ -296,3 +296,741 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/uploadphoto
 in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (48)
 in /home/jackey/workspace/garnier/web/index.php (13)
+2013/10/23 11:45:41 [error] [php] Undefined variable: auth_code (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:70)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/?r=user/sinacallback
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (70)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 11:48:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sinacallback?access_token=2.004T6KxBQFpcLB5a126aa032fkLcPD".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('sinacallback?ac...')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback?ac...')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/?r=user/sinacallback?access_token=2.004T6KxBQFpcLB5a126aa032fkLcPD&remind_in=157679999&expires_in=157679999&uid=1790417857
+---
+2013/10/23 11:49:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sinacallback?access_token=2.004T6KxBQFpcLB5a126aa032fkLcPD".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('sinacallback?ac...')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback?ac...')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/?r=user/sinacallback?access_token=2.004T6KxBQFpcLB5a126aa032fkLcPD&remind_in=157679999&expires_in=157679999&uid=1790417857
+---
+2013/10/23 11:50:33 [error] [php] Missing argument 1 for CHttpRequest::getParam(), called in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php on line 68 and defined (/home/jackey/workspace/garnier/web/yii/framework/web/CHttpRequest.php:169)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/?access_token=2.004T6KxBQFpcLB5a126aa032fkLcPD&remind_in=157679999&expires_in=157679999&uid=1790417857&r=user%2Fsinacallback
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (68)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 11:51:00 [error] [php] Undefined index: access_code (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:68)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/?access_token=2.004T6KxBQFpcLB5a126aa032fkLcPD&remind_in=157679999&expires_in=157679999&uid=1790417857&r=user%2Fsinacallback
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (68)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 13:49:59 [error] [php] Undefined variable: nickName (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:86)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (86)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 13:50:04 [error] [php] Undefined variable: newUser (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:103)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (103)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 13:50:26 [error] [php] Undefined variable: nickName (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:87)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (87)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 13:56:25 [error] [exception.CDbException] exception 'CDbException' with message 'The active record cannot be inserted to database because it is not new.' in /home/jackey/workspace/garnier/web/yii/framework/db/ar/CActiveRecord.php:1070
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(104): CActiveRecord->insert(Array)
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/register')
+#7 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /home/jackey/workspace/garnier/web/index.php(19): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://garnier.local/sinasdk/callback.php?code=a967336c1c703a8bf5e3db5f9de8c1ae
+---
+2013/10/23 14:10:04 [error] [php] Invalid argument supplied for foreach() (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:112)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (112)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:10:31 [error] [php] Invalid argument supplied for foreach() (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:112)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (112)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:14:34 [error] [php] Undefined variable: tmpUser (/home/jackey/workspace/garnier/web/protected/views/user/register.php:3)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#2 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(90): UserController->render()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/views/user/register.php (3)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (90)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:16:12 [error] [php] Undefined variable: tmpUser (/home/jackey/workspace/garnier/web/protected/views/user/register.php:3)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#2 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(90): UserController->render()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/views/user/register.php (3)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (90)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:23:39 [error] [php] Undefined index: screen_name (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:114)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (114)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:25:37 [error] [php] include_once(config.php): failed to open stream: No such file or directory (/home/jackey/workspace/garnier/web/protected/views/user/login.php:3)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CBaseController.php(95): UserController->renderInternal()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#3 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(56): UserController->render()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#9 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (3)
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (3)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (56)
+2013/10/23 14:25:53 [error] [php] include_once(config.php): failed to open stream: No such file or directory (/home/jackey/workspace/garnier/web/protected/views/user/login.php:3)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CBaseController.php(95): UserController->renderInternal()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#3 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(56): UserController->render()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#9 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (3)
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (3)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (56)
+2013/10/23 14:27:57 [error] [php] Illegal string offset 'access_token' (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:94)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (94)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:28:09 [error] [php] Illegal string offset 'access_token' (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:95)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (95)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:28:37 [error] [exception.CException] exception 'CException' with message 'Property "UserController.tmpUser" is not defined.' in /home/jackey/workspace/garnier/web/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/protected/views/user/register.php(2): CComponent->__get('tmpUser')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CBaseController.php(126): require('/home/jackey/wo...')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/jackey/wo...', Array, true)
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): CBaseController->renderFile('/home/jackey/wo...', Array, true)
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): CController->renderPartial('register', Array, true)
+#5 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(108): CController->render('register', Array)
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#11 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/register')
+#12 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/jackey/workspace/garnier/web/index.php(19): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=user/register
+---
+2013/10/23 14:30:03 [error] [exception.CException] exception 'CException' with message 'Property "UserController.tmpUser" is not defined.' in /home/jackey/workspace/garnier/web/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/protected/views/user/register.php(2): CComponent->__get('tmpUser')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CBaseController.php(126): require('/home/jackey/wo...')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/jackey/wo...', Array, true)
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): CBaseController->renderFile('/home/jackey/wo...', Array, true)
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): CController->renderPartial('register', Array, true)
+#5 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(108): CController->render('register', Array)
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#11 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/register')
+#12 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/jackey/workspace/garnier/web/index.php(19): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=user/register
+---
+2013/10/23 14:30:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `user` (`avadar`, `weibo_auth_code`, `tencent_auth_code`, `renren_auth_code`, `weibo_name`, `tencent_name`, `renren_name`, `nickname`, `password`, `from`, `email`, `tel`, `datetime`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12).
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (138)
+in /home/jackey/workspace/garnier/web/index.php (19)
+2013/10/23 14:30:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `user` (`avadar`, `weibo_auth_code`, `tencent_auth_code`, `renren_auth_code`, `weibo_name`, `tencent_name`, `renren_name`, `nickname`, `password`, `from`, `email`, `tel`, `datetime`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12)' in /home/jackey/workspace/garnier/web/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(138): CActiveRecord->insert()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/register')
+#8 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /home/jackey/workspace/garnier/web/index.php(19): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://garnier.local/index.php?r=user/register
+---
+2013/10/23 15:28:07 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.sesson" is not defined.' in /home/jackey/workspace/garnier/web/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/base/CModule.php(105): CComponent->__get('sesson')
+#1 /home/jackey/workspace/garnier/web/protected/controllers/PhotoController.php(59): CModule->__get('sesson')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /home/jackey/workspace/garnier/web/index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=photo/uploadimage
+HTTP_REFERER=http://garnier.local/index.php?r=photo/uploadimage
+---
+2013/10/23 15:48:53 [error] [php] Undefined index: screen_name (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:94)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/sinacallback&code=4d226a636e8f7ec0fe67090135d8c95d
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (94)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:03:07 [error] [php] Invalid argument supplied for foreach() (/home/jackey/workspace/garnier/web/yii/framework/db/CDbCommand.php:784)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (198)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:03:29 [error] [exception.CDbException] exception 'CDbException' with message 'The DB query must contain the "from" portion.' in /home/jackey/workspace/garnier/web/yii/framework/db/CDbCommand.php:566
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/db/CDbCommand.php(160): CDbCommand->buildQuery(Array)
+#1 /home/jackey/workspace/garnier/web/yii/framework/db/CDbCommand.php(484): CDbCommand->getText()
+#2 /home/jackey/workspace/garnier/web/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#3 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(199): CDbCommand->queryRow()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#9 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/register')
+#10 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /home/jackey/workspace/garnier/web/index.php(20): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://garnier.local/index.php?r=user/register
+---
+2013/10/23 16:03:38 [error] [php] Trying to get property of non-object (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:202)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (202)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:04:06 [error] [php] Undefined variable: user (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:199)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (199)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:04:36 [error] [php] Undefined variable: user (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:199)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (199)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:11:16 [error] [php] Undefined variable: access_code (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:112)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/sinacallback&code=bf45dc2be90c241f407568e992455f2a
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (112)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:33:51 [error] [exception.CDbException] exception 'CDbException' with message 'The active record cannot be updated because it is new.' in /home/jackey/workspace/garnier/web/yii/framework/db/ar/CActiveRecord.php:1118
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(207): CActiveRecord->update()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRegister()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/register')
+#7 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /home/jackey/workspace/garnier/web/index.php(20): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://garnier.local/index.php?r=user/register
+---
+2013/10/23 16:37:04 [error] [php] include(UserController.php): failed to open stream: No such file or directory (/home/jackey/workspace/garnier/web/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/protected/controllers/PhotoController.php(59): spl_autoload_call()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/uploadimage
+in /home/jackey/workspace/garnier/web/protected/controllers/PhotoController.php (59)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:37:53 [error] [php] json_decode() expects parameter 1 to be string, array given (/home/jackey/workspace/garnier/web/protected/controllers/PhotoController.php:86)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/uploadimage
+in /home/jackey/workspace/garnier/web/protected/controllers/PhotoController.php (86)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:38:17 [error] [php] Trying to get property of non-object (/home/jackey/workspace/garnier/web/protected/controllers/PhotoController.php:87)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/uploadimage
+in /home/jackey/workspace/garnier/web/protected/controllers/PhotoController.php (87)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:43:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logout".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('logout')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('logout')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/logout')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/logout
+---
+2013/10/23 16:53:02 [warning] [application] Failed to set unsafe attribute "nickname" of "User".
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (232)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:53:02 [warning] [application] Failed to set unsafe attribute "password" of "User".
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (232)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:53:02 [warning] [application] Failed to set unsafe attribute "from" of "User".
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (232)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:53:02 [warning] [application] Failed to set unsafe attribute "email" of "User".
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (232)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:53:02 [warning] [application] Failed to set unsafe attribute "tel" of "User".
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (232)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:53:02 [warning] [application] Failed to set unsafe attribute "datetime" of "User".
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (232)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 16:53:02 [warning] [application] Failed to set unsafe attribute "avadar" of "User".
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (232)
+in /home/jackey/workspace/garnier/web/index.php (20)
+2013/10/23 18:08:55 [error] [php] Undefined variable: renren_code_url (/home/jackey/workspace/garnier/web/protected/views/user/login.php:11)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#2 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(73): UserController->render()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (11)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (73)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:10:20 [error] [php] Use of undefined constant RENREN_APIKEY - assumed 'RENREN_APIKEY' (/home/jackey/workspace/garnier/web/protected/views/user/login.php:8)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#2 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(73): UserController->render()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (8)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (73)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:11:05 [error] [php] include(RenrenRestApiService.php): failed to open stream: No such file or directory (/home/jackey/workspace/garnier/web/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(93): spl_autoload_call()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionRenrencallback()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=bWlh3JoNrpb8h2rlomyl7oIxvRnPFliN&state=renren_5267a0b842e829.42404043
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (93)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:13:05 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:13:57 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:13:58 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:13:58 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:13:59 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:13:59 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:13:59 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:14:35 [error] [php] Undefined variable: _SESSION (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:100)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/renrencallback&code=rysrKvCHEhZj2T4k9pcrrUM2WnAeI4DR&state=renren_5267a1303bd6d5.51330397
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (100)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 18:34:29 [error] [php] Undefined index: renren (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:273)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(25): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (273)
+in /home/jackey/workspace/garnier/web/index.php (25)
+2013/10/23 19:04:18 [error] [php] Undefined variable: callback (/home/jackey/workspace/garnier/web/protected/views/user/login.php:14)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#2 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(73): UserController->render()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/jackey/workspace/garnier/web/index.php(30): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (14)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (73)
+in /home/jackey/workspace/garnier/web/index.php (30)
+2013/10/23 19:05:35 [error] [php] Undefined variable: type (/home/jackey/workspace/garnier/web/tencentsdk/Tencent.php:42)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CBaseController.php(95): UserController->renderInternal()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#3 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(73): UserController->render()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#9 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /home/jackey/workspace/garnier/web/index.php(30): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/tencentsdk/Tencent.php (42)
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (14)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (73)
+2013/10/23 19:08:36 [error] [php] Undefined variable: client_id (/home/jackey/workspace/garnier/web/protected/views/user/login.php:15)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#2 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(73): UserController->render()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/jackey/workspace/garnier/web/index.php(32): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (15)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (73)
+in /home/jackey/workspace/garnier/web/index.php (32)
+2013/10/23 19:08:36 [error] [php] Undefined variable: client_id (/home/jackey/workspace/garnier/web/protected/views/user/login.php:15)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(869): UserController->renderFile()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(782): UserController->renderPartial()
+#2 /home/jackey/workspace/garnier/web/protected/controllers/UserController.php(73): UserController->render()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionLogin()
+#4 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#6 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#7 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#8 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/jackey/workspace/garnier/web/index.php(32): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in /home/jackey/workspace/garnier/web/protected/views/user/login.php (15)
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (73)
+in /home/jackey/workspace/garnier/web/index.php (32)
+2013/10/23 19:14:18 [error] [php] Undefined index: access_token (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:101)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(32): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/tencentcallback&code=74caf02255058b9475abe89d7cfd2945&openid=3AFAFCBA888C78C9478A98B62F6A5A3B&openkey=D273D9698F8BF77B405D2133A2FEDE8A&state=
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (101)
+in /home/jackey/workspace/garnier/web/index.php (32)
+2013/10/23 19:16:13 [error] [php] Undefined index: access_token (/home/jackey/workspace/garnier/web/protected/controllers/UserController.php:101)
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/jackey/workspace/garnier/web/index.php(32): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/tencentcallback&code=153f6a7ce4492f7ff1d562d8e85a458f&openid=3AFAFCBA888C78C9478A98B62F6A5A3B&openkey=D273D9698F8BF77B405D2133A2FEDE8A&state=
+in /home/jackey/workspace/garnier/web/protected/controllers/UserController.php (101)
+in /home/jackey/workspace/garnier/web/index.php (32)
+2013/10/23 19:44:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "share".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('share')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('share')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/share')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(32): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/share&0%5Bto%5D=weibo
+HTTP_REFERER=http://garnier.local/index.php?r=photo/uploadimage
+---
+2013/10/23 19:44:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "share".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('share')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('share')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/share')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(32): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/share&0%5Bto%5D=weibo
+HTTP_REFERER=http://garnier.local/index.php?r=photo/uploadimage
+---
+2013/10/23 20:03:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "listphoto".' in /home/jackey/workspace/garnier/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/jackey/workspace/garnier/web/yii/framework/web/CController.php(270): CController->missingAction('listphoto')
+#1 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(282): CController->run('listphoto')
+#2 /home/jackey/workspace/garnier/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/listphoto')
+#3 /home/jackey/workspace/garnier/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/jackey/workspace/garnier/web/index.php(32): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=photo/listphoto
+---

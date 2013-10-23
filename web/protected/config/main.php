@@ -5,6 +5,7 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+$basePath = dirname(__FILE__).DIRECTORY_SEPARATOR."..";
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'garnier',
@@ -30,6 +31,10 @@ return array(
 
 	// application components
 	'components'=>array(
+                "session" => array(
+                    "autoStart" => TRUE,
+                    "sessionName" => "YIISESSION_ID",
+                ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

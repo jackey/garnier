@@ -30,13 +30,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id', 'required'),
-			array('user_id', 'numerical', 'integerOnly'=>true),
-			array('nickname, password, from, email, tel', 'length', 'max'=>45),
-			array('datetime', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('user_id, nickname, password, from, email, tel, datetime', 'safe', 'on'=>'search'),
+                    
 		);
 	}
 

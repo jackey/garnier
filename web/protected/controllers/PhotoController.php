@@ -1,173 +1,168 @@
 <?php
 
-class PhotoController extends Controller
-{
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
+class PhotoController extends Controller {
 
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
-		);
-	}
+    public $layout = 'main';
+    public $request = NULL;
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+    public function init() {
+        return parent::init();
+    }
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
+    public function beforeAction($action) {
+        $this->request = Yii::app()->getRequest();
+        return parent::beforeAction($action);
+    }
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new Photo;
+    public function returnJSON($data) {
+        header("Content-Type: application/json");
+        echo CJSON::encode($data);
+        Yii::app()->end();
+    }
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+    public function error($msg, $code) {
+        return array(
+            "data" => NULL,
+            "error" => array(
+                "code" => $code,
+                "message" => $msg,
+            ),
+        );
+    }
+    
+    public static function getLoginUser() {
+        return Yii::app()->session["user"];
+    }
+    
+    public static function isLogin() {
+        return Yii::app()->session["is_login"] == "true";
+    }
+    
+    public static function isComplete() {
+        $user = self::getLoginUser();
+        if ($user["email"] == "" || !isset($user["email"])) {
+            return FALSE;
+        }
+        return TRUE;
+    }
 
-		if(isset($_POST['Photo']))
-		{
-			$model->attributes=$_POST['Photo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->photo_id));
-		}
+    /**
+     * Returns the data model based on the primary key given in the GET variable.
+     * If the data model is not found, an HTTP exception will be raised.
+     * @param integer $id the ID of the model to be loaded
+     * @return Photo the loaded model
+     * @throws CHttpException
+     */
+    public function loadModel($id) {
+        $model = Photo::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
+    
+    public function actionListPhotoes() {
+        print "hello world";
+    }
+    
+    /**
+     * 返回最后一个被处理的图片
+     */
+    public function actionLastPhoto() {
+        $tmpImage = Yii::app()->session["tmp_upload_image"];
+        $user = self::getLoginUser();
+        // 用户已经登录后，我们自动把未保存的图片添加到数据库
+        if ($user) {
+            if (!$tmpImage) {
+                return $this->returnJSON($this->error("no last image", 502));
+            }
+            // 文件上传后，保存数据库记录
+            $newPhoto = array(
+                "path" => $tmpImage,
+                "user_id" => $user["user_id"],
+                "vote" => 0,
+                "datetime" => date("Y-m-d h:m:s"),
+            );
+            $mPhoto = new Photo();
+            $mPhoto->unsetAttributes();
+            $mPhoto->setIsNewRecord(true);
+            $mPhoto->attributes = $newPhoto;
+            $mPhoto->insert();
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
+            // 插入新的数据后，我们要以JSON格式返回给客户端
+            $newPhoto["photo_id"] = $mPhoto->getPrimaryKey();
+            // 然后清除掉session离的tmp_upload_image
+            Yii::app()->session["tmp_upload_image"] = "";
+            return $this->returnJSON(array(
+                "data" => $newPhoto,
+                "error" => NULL
+            ));
+        }
+        //如果用户没有登录，则我们返回一个错误消息给用户，提醒他登录
+        else {
+            return $this->returnJSON($this->error("not login", 501));
+        }
+    }
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
+    public function actionUploadImage() {
+        // Post image
+        if ($this->request->isPostRequest) {
+            $fileUpload = CUploadedFile::getInstanceByName("image");
+            $mimeName = $fileUpload->getType();
+            $allowMimes = array(
+                "image/jpeg",
+                "image/png"
+            );
+            if (!in_array($mimeName, $allowMimes)) {
+                $this->returnJSON($this->error("wrong file type", 500));
+            } else {
+                if (!self::isLogin()) {
+                    // 如果没有登录，那先保存文件到临时目录，然后登录后继续处理
+                    $to = ROOT."/uploads/tmp/tmp".  rand(0, 100000). time().".". $fileUpload->getExtensionName();
+                    if (!is_dir(ROOT."/uploads/tmp")) {
+                        mkdir(ROOT."/uploads/tmp", 0777);
+                    }
+                    Yii::app()->session["tmp_upload_image"] = str_replace(ROOT, "", $to);
+                    $fileUpload->saveAs($to);
+                    
+                    //返回给客户端，用户没有登录
+                    return $this->returnJSON(array(
+                        "data" => NULL,
+                        "error" => array(
+                            "message" => "not login",
+                            "code" => 501
+                        ),
+                    ));
+                }
+                else {
+                    $user = self::getLoginUser();
+                    $to = ROOT."/uploads/".$user['nickname']. "/". time(). "_".$fileUpload->getName();
+                    $fileUpload->saveAs($to);
+                    
+                    // 文件上传后，保存数据库记录
+                    $newPhoto = array(
+                        "path" => str_replace(ROOT, "", $to),
+                        "user_id" => $user["user_id"],
+                        "vote" => 0,
+                        "datetime" => date("Y-m-d h:m:s"),
+                    );
+                    $mPhoto = new Photo();
+                    $mPhoto->unsetAttributes();
+                    $mPhoto->setIsNewRecord(true);
+                    $mPhoto->attributes = $newPhoto;
+                    $mPhoto->insert();
+                    
+                    // 插入新的数据后，我们要以JSON格式返回给客户端
+                    $newPhoto["photo_id"] = $mPhoto->getPrimaryKey();
+                    return $this->returnJSON(array(
+                        "data" => $newPhoto,
+                        "error" => NULL
+                    ));
+                }
+            }
+        } else {
+            $tmpImage = Yii::app()->session['tmp_upload_image'];
+            $this->render("uploadimage", array("tmpImage" => $tmpImage));
+        }
+    }
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Photo']))
-		{
-			$model->attributes=$_POST['Photo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->photo_id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Photo');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new Photo('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Photo']))
-			$model->attributes=$_GET['Photo'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer $id the ID of the model to be loaded
-	 * @return Photo the loaded model
-	 * @throws CHttpException
-	 */
-	public function loadModel($id)
-	{
-		$model=Photo::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Photo $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='photo-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
 }
