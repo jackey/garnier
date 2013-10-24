@@ -21,6 +21,14 @@ require_once $tencentsdk."/Tencent.php";
 OAuth::init(TENCENT_KEY, TENCENT_SECRET);
 Tencent::$debug = FALSE;
 
+define("USER_IS_EXIT_ERROR", 503);
+define("NO_LAST_IMAGE_ERROR", 502);
+define("NO_LOGIN_ERROR", 501);
+define("WRONG_FILE_TYPE_ERROR", 500);
+define("ERROR_LOGIN_FAILED", 504);
+define("ERROR_VOTE_LIMIT", 505);
+define("ERROR_UNKNOW", 506);
+
 
 // remove the following lines when in production mode
 defined('YII_DEBUG') or define('YII_DEBUG',true);

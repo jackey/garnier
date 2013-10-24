@@ -18,3 +18,21 @@ $tencent_code_url = OAuth::getAuthorizeURL(TENCENT_CALLBACK);
 <p><a href="<?=$code_url?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>sinasdk/weibo_login.png" title="点击进入授权页面" alt="点击进入授权页面" border="0" /></a></p>
 <p><a href="<?=$renren_code_url?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>renrensdk/renren.png" title="点击进入授权页面" alt="点击进入授权页面" border="0" /></a></p>
 <p><a href="<?=$tencent_code_url?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>tencentsdk/logo.png" title="点击进入授权页面" alt="点击进入授权页面" border="0" /></a></p>
+
+<form name="login" id="login" action="<?php echo Yii::app()->createUrl("user/login")?>" method="post" enctype="multipart/form-data">
+    <div><label for="">Email: </label><input type="text" value="" name="email"/></div>
+    <div><label for="">Password:</label><input type="text" value="" name="password" /></div>
+    <div><button>Login</button></div>
+</form>
+
+<script type="text/javascript">
+    (function ($){
+        $(function () {
+            $("#login").ajaxForm({
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+        });
+    })(jQuery);
+    </script>

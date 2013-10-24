@@ -28,15 +28,15 @@ class UserController extends Controller {
         echo CJSON::encode($data);
         Yii::app()->end();
     }
-    
+
     public static function getLoginUser() {
         return Yii::app()->session["user"];
     }
-    
+
     public static function isLogin() {
         return Yii::app()->session["is_login"] == "true";
     }
-    
+
     public static function isComplete() {
         $user = self::getLoginUser();
         if ($user["email"] == "" || !isset($user["email"])) {
@@ -60,33 +60,48 @@ class UserController extends Controller {
         return parent::beforeAction($action);
     }
 
-    public function actionUploadphoto() {
-        if (!$this->request->isPostRequest) {
-            $this->returnJSON($this->errorJOSN("only allow post method", self::HTTP_METHOD_ERROR));
+    public function actionLogin() {
+        // Normal login
+        if ($this->request->isPostRequest) {
+            $email = $this->request->getPost("email");
+            $password = $this->request->getPost("password");
+            $row = Yii::app()->db->createCommand()
+                    ->select("*")
+                    ->from("user")
+                    ->where("email = :email AND password =:password", array(":email" => $email, ":password" => md5($password)))
+                    ->queryRow();
+            // 查询到后， 自动登录
+            if ($row) {
+                Yii::app()->session["user"] = $row;
+                Yii::app()->session["is_login"] = "true";
+
+                return $this->returnJSON(array(
+                            "data" => "login success",
+                            "error" => NULL
+                ));
+            } else {
+                return $this->returnJSON($this->error("login failed", ERROR_LOGIN_FAILED));
+            }
         } else {
-            //TODO:
+            if (!self::isLogin()) {
+                $this->render("login");
+            } else {
+                $this->redirect("index.php");
+            }
         }
     }
 
-    public function actionLogin() {
-        if (!self::isLogin()) {
-            $this->render("login");
-        } else {
-            $this->redirect("index.php");
-        }
-    }
-    
     public function actionLogout() {
         Yii::app()->session->clear();
         Yii::app()->session->destroy();
-        
+
         $this->redirect("index.php");
     }
 
     public function actionInfo() {
         $this->render("info");
     }
-    
+
     public function actionTencentCallback() {
         header("Content-Type: text/html;charset=utf-8");
         if ($this->request->getParam("code")) {
@@ -127,65 +142,62 @@ class UserController extends Controller {
                     // 没有注册的话，我们则自动创建一条用户记录，然后再实现自动登录
                     else {
                         $newUser = array(
-                             "nickname" => $tencent_user['data']["nick"],
-                             "sns_user_id" => $tencent_user['data']["openid"],
-                             "from" => "tencent",
-                             "email" => "",
-                             "tel" => "",
-                             "datetime" => date("Y-m-d m:h:s"),
-                             "avadar" => "0",
-                             "tencent_auth_code" => $access_token,
-                         );
-                         $mUser = new User();
-                         $mUser->unsetAttributes();
-                         $mUser->setIsNewRecord(true);
-                         foreach ($newUser as $property => $value) {
-                             $mUser->{$property} = $value;
-                         }
-                         $mUser->insert();
-                         $newUser["user_id"] = $mUser->getPrimaryKey();
+                            "nickname" => $tencent_user['data']["nick"],
+                            "sns_user_id" => $tencent_user['data']["openid"],
+                            "from" => "tencent",
+                            "email" => "",
+                            "tel" => "",
+                            "datetime" => date("Y-m-d m:h:s"),
+                            "avadar" => "0",
+                            "tencent_auth_code" => $access_token,
+                        );
+                        $mUser = new User();
+                        $mUser->unsetAttributes();
+                        $mUser->setIsNewRecord(true);
+                        foreach ($newUser as $property => $value) {
+                            $mUser->{$property} = $value;
+                        }
+                        $mUser->insert();
+                        $newUser["user_id"] = $mUser->getPrimaryKey();
 
-                         //自动注册后，我们还需要自动登录
-                         Yii::app()->session["user"] = $newUser;
-                         Yii::app()->session["is_login"] = "true";
+                        //自动注册后，我们还需要自动登录
+                        Yii::app()->session["user"] = $newUser;
+                        Yii::app()->session["is_login"] = "true";
 
-                         // 最后跳转到注册完善页面
-                         return $this->redirect("index.php?r=user/register");
+                        // 最后跳转到注册完善页面
+                        return $this->redirect("index.php?r=user/register");
                     }
-                }
-                else {
+                } else {
                     die("验证失败");
                 }
-            }
-            else {
+            } else {
                 die("转换数据失败");
             }
-        }
-        else {
+        } else {
             $this->redirect("index.php");
         }
     }
-    
+
     public function actionRenrencallback() {
         // 授权后获取access token
         if ($this->request->getParam("code")) {
-            
-            $rennClient = new RennClient (RENREN_APP_KEY, RENREN_APP_SECRET);
+
+            $rennClient = new RennClient(RENREN_APP_KEY, RENREN_APP_SECRET);
             // 处理code -- 根据code来获得token
-            $keys = array ();
+            $keys = array();
 
             // 验证state，防止伪造请求跨站攻击
             $state = $_REQUEST ['state'];
-            if (empty ( $state ) || $state !== Yii::app()->session['renren_state']) {
-                    echo '非法请求！';
-                    exit ();
+            if (empty($state) || $state !== Yii::app()->session['renren_state']) {
+                echo '非法请求！';
+                exit();
             }
             Yii::app()->session["renren_state"] = "";
 
             // 获得code
             $keys ['code'] = $_REQUEST ['code'];
             $keys ['redirect_uri'] = RENREN_CALLBACK_URL;
-            $token = $rennClient->getTokenFromTokenEndpoint ( 'code', $keys );
+            $token = $rennClient->getTokenFromTokenEndpoint('code', $keys);
             ob_clean();
             Yii::app()->session["renren_access_token"] = $token->accessToken;
             $access_token = $token->accessToken;
@@ -233,8 +245,7 @@ class UserController extends Controller {
                 // 最后跳转到注册完善页面
                 return $this->redirect("index.php?r=user/register");
             }
-        }
-        else {
+        } else {
             $this->redirect("index.php");
         }
     }
@@ -294,12 +305,12 @@ class UserController extends Controller {
                 }
                 $ret = $mUser->insert();
                 $newUser["user_id"] = $mUser->getPrimaryKey();
-                
+
                 // 实现自动登录
                 Yii::app()->session["is_login"] = "true";
                 Yii::app()->session["user"] = $newUser;
             }
-            
+
             // Step 4, 自动注册完成后，跳转到注册页面让用户完善资料。
             return $this->redirect("index.php?r=user/register");
         } else {
@@ -308,16 +319,17 @@ class UserController extends Controller {
     }
 
     public function actionRegister() {
+        //登录并且完成注册后直接跳转到首页
         if (self::isLogin() && self::isComplete()) {
             return $this->redirect("index.php");
         }
-        
+
         // 输出注册表单
         if (!$this->request->isPostRequest) {
             // 这里有2种情况: a. 用户直接点击注册， b. 用户通过第三方注册
             // 这里不需要做判断
             return $this->render("register", array("user" => self::getLoginUser()));
-        } 
+        }
         // 处理注册表单提交
         else {
             // 用户的头像
@@ -376,18 +388,27 @@ class UserController extends Controller {
                         "sns_user_id" => $user["sns_user_id"],
                     );
                 }
-                if (!$newUser) {
-                    return $this->returnJSON($this->error("it is not post", "500"));
-                }
 
-                // Step1, 在添加之前，需要找到之前自动注册的用户数据
+                if (!$newUser) {
+                    return $this->returnJSON($this->error("it is not post", ERROR_UNKNOW));
+                }
+                
+                //添加之前检查 email 是否已经注册
+                $row = Yii::app()->db->createCommand()
+                        ->select("*")
+                        ->from("user")
+                        ->where("email = :email", array(":email" => $newUser["email"]))
+                        ->queryRow();
+                if ($row) {
+                    return $this->returnJSON($this->error("email already exits", USER_IS_EXIT_ERROR));
+                }
                 $user = new User();
                 $user->setIsNewRecord(false);
                 foreach ($newUser as $property => $value) {
                     $user->{$property} = $value;
                 }
                 $ret = $user->update();
-                
+
                 //更新session得用户数据
                 Yii::app()->session["user"] = ($newUser);
             }
@@ -402,6 +423,15 @@ class UserController extends Controller {
                     "datetime" => date("Y-m-d m:h:s"),
                     "avadar" => str_replace(ROOT, "", $to),
                 );
+                //添加之前检查 email 是否已经注册
+                $row = Yii::app()->db->createCommand()
+                        ->select("*")
+                        ->from("user")
+                        ->where("email = :email", array(":email" => $newUser["email"]))
+                        ->queryRow();
+                if ($row) {
+                    return $this->returnJSON($this->error("email already exits", USER_IS_EXIT_ERROR));
+                }
                 // 添加新的用户数据
                 $mUser = new User();
                 $mUser->setIsNewRecord(true);
@@ -409,10 +439,10 @@ class UserController extends Controller {
                     $mUser->{$property} = $value;
                 }
                 $mUser->insert();
-                
+
                 $user_id = $mUser->getPrimaryKey();
                 $newUser["user_id"] = $user_id;
-                
+
                 // 自动登录
                 Yii::app()->session["user"] = $newUser;
                 Yii::app()->session["is_login"] = "true";
