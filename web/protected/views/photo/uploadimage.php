@@ -7,7 +7,12 @@
             <?php echo CHtml::link("分享腾讯微薄", "#")?>
         </p>
     <?php else: ?>
-        <input type="file" name="image" />
-        <input type="submit" value="Submit">
+        <div><input type="file" name="image" /></div>
+        <div><input type="text" name="width" value="100" /></div>
+        <div><input type="text" name="height" value='100'/></div>
+        <div><input type="text" name="x" value='50'/></div>
+        <div><input type="text" name="y" value='50'/></div>
+        <div><input type="text" name="rotate" value='10'/></div>
+        <div><input type="submit" value="Submit"></div>
     <?php endif;?>
 </form>

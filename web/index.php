@@ -21,6 +21,9 @@ require_once $tencentsdk."/Tencent.php";
 OAuth::init(TENCENT_KEY, TENCENT_SECRET);
 Tencent::$debug = FALSE;
 
+// require 美白 库
+require_once dirname(__FILE__).'/../phpgraphic/graphic.php';
+
 define("USER_IS_EXIT_ERROR", 503);
 define("NO_LAST_IMAGE_ERROR", 502);
 define("NO_LOGIN_ERROR", 501);

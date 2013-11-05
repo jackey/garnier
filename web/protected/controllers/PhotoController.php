@@ -3,6 +3,10 @@
 class PhotoController extends Controller {
 
     public $layout = 'main';
+    /**
+     *
+     * @var CHttpRequest
+     */
     public $request = NULL;
 
     public function init() {
@@ -196,6 +200,15 @@ class PhotoController extends Controller {
         // Post image
         if ($this->request->isPostRequest) {
             $fileUpload = CUploadedFile::getInstanceByName("image");
+            
+            // 图片处理参数
+            // 每一个都是必须
+            $params = array();
+            $params['width'] = $this->request->getPost('width');
+            $params['height'] = $this->request->getPost('height');
+            $params['x'] = $this->request->getPost('x');
+            $params['y'] = $this->request->getPost('y');
+            $params['rotate'] = $this->request->getPost('rotate');
             $mimeName = $fileUpload->getType();
             $allowMimes = array(
                 "image/jpeg",
@@ -225,6 +238,16 @@ class PhotoController extends Controller {
                 else {
                     $user = self::getLoginUser();
                     $to = ROOT."/uploads/".$user['nickname']. "/". time(). "_".$fileUpload->getName();
+                    // 保存之前，先处理图片
+                    // 1. 裁剪和旋转
+                    $this->_processImage($fileUpload->getTempName(), $params);
+                    // 2. 美白
+                    $grapher = new Graphic();
+                    $grapher->apply_filter($fileUpload->getTempName(), $fileUpload->getTempName());
+                    
+                    // 3. 美白后， 还需要和王力宏的照片合并
+
+                    // 然后再保存
                     $fileUpload->saveAs($to);
                     
                     // 文件上传后，保存数据库记录
@@ -252,6 +275,21 @@ class PhotoController extends Controller {
             $tmpImage = Yii::app()->session['tmp_upload_image'];
             $this->render("uploadimage", array("tmpImage" => $tmpImage));
         }
+    }
+    
+    public function _processImage($path, $params) {
+        // 第一步，裁剪图片
+        $image = new Imagick($path);
+        $image->resizeImage($params['width'], $params['height'], Imagick::FILTER_LANCZOS, 1);
+        
+        // 第二步 旋转图片
+        $bg = ROOT.'/uploads/background.png';
+        $image->rotateimage(new ImagickPixel('none'), $params['rotate']);
+        $image->writeimage();
+        
+        // 清理资源
+        $image->clear();
+        $image->destroy();
     }
 
 }
