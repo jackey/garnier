@@ -283,13 +283,26 @@ class PhotoController extends Controller {
         $image->resizeImage($params['width'], $params['height'], Imagick::FILTER_LANCZOS, 1);
         
         // 第二步 旋转图片
-        $bg = ROOT.'/uploads/background.png';
         $image->rotateimage(new ImagickPixel('none'), $params['rotate']);
+
+        // 给图片cover一个背景
+        $bk = new Imagick($this->getCoverBackground(1));
+        $image->setimagematte(1);
+        $image->compositeimage($bk, imagick::COMPOSITE_DEFAULT, 0, 0);
+        
+        // 最后保存图片
         $image->writeimage();
         
         // 清理资源
         $image->clear();
         $image->destroy();
+        
+        $bk->clear();
+        $bk->destroy();
+    }
+
+    public function getCoverBackground($name = 1) {
+        return ROOT.'/medias/cover/'.$name.'.png';
     }
 
 }

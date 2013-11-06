@@ -113,7 +113,7 @@ class UserController extends Controller {
             $r = Http::request($url);
             parse_str($r, $out);
             //存储授权数据
-            if ($out['access_token']) {
+            if (isset($out['access_token'])) {
                 $access_token = Yii::app()->session["tencent_access_token"] = $out["access_token"];
                 $_SESSION['t_access_token'] = $out['access_token'];
                 $_SESSION['t_refresh_token'] = $out['refresh_token'];
