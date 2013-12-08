@@ -124,8 +124,14 @@ class AdminController extends Controller {
       $rowNumber = 2;
       foreach ($list as $item) {
         $col = 'A';
-        foreach ($item as $cell) {
+        foreach ($item as $key => $cell) {
+          if ($key == "path") {
+            $cell = Yii::app()->request->getBaseUrl(true). $cell;
             $excel->getActiveSheet()->setCellValue($col.$rowNumber, $cell);
+          }
+          else {
+            $excel->getActiveSheet()->setCellValue($col.$rowNumber, $cell);
+          }
           $col++;
         }
         $rowNumber++;
