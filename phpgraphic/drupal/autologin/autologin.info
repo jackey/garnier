@@ -1,0 +1,5 @@
+name = Login From Yii
+version = 0.0.1
+package = user
+core = 7.x
+description = Login From Yii

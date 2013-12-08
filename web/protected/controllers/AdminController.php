@@ -100,6 +100,9 @@ class AdminController extends Controller {
     }
     
     public function actionExport() {
+      if (!$this->adminIsLogin()) {
+        return $this->redirect(array("index"));
+      }
       require_once "PHPExcel.php";
       $cacheMethod = PHPExcel_CachedObjectStorageFactory:: cache_to_discISAM;
       $cacheSettings = array( 'dir'  => '/tmp/');

