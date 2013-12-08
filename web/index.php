@@ -24,6 +24,8 @@ Tencent::$debug = FALSE;
 // require 美白 库
 require_once dirname(__FILE__).'/../phpgraphic/graphic.php';
 
+
+
 define("USER_IS_EXIT_ERROR", 503);
 define("NO_LAST_IMAGE_ERROR", 502);
 define("NO_LOGIN_ERROR", 501);
@@ -38,6 +40,10 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 // specify how many levels of call stack should be shown in each log message
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 define("ROOT", dirname(__FILE__));
+
+
+set_include_path(get_include_path() . PATH_SEPARATOR . ROOT."/phpexcel/Classes");
+set_include_path(get_include_path() . PATH_SEPARATOR . ROOT."/phpexcel/Classes/PHPExcel");
 
 require_once($yii);
 Yii::createWebApplication($config)->run();
